@@ -22,7 +22,7 @@ var profile = (function (module){
   module.getAjax = function(user_id){
         $.ajax({
           // url: 'http://localhost:3000/users/' + localStorage['authToken'],
-          url: 'http://localhost:3000/users/' + user_id,
+          url: 'http://bobs-bagels-api.herokuapp.com//users/' + user_id,
           type: 'PATCH',
           dataType: 'JSON',
           data:
@@ -50,7 +50,7 @@ var profile = (function (module){
 
  module.init = function(){
     $.ajax({
-    url: 'http://localhost:3000/users/' + localStorage['authToken'],
+    url: 'http://bobs-bagels-api.herokuapp.com//users/' + localStorage['authToken'],
     type: 'GET',
     dataType: 'JSON'
     })
@@ -87,7 +87,7 @@ var profile = (function (module){
 		var responseToString = JSON.stringify(response);
 		response = responseToString.replace(/\s/g, "_");
 		response = JSON.parse(responseToString);
-		
+
 		var cardInfo = response.data
 		var template = Handlebars.compile($('#user-pay-render').html());
 		$('#content').append(template({
@@ -109,7 +109,7 @@ var profile = (function (module){
 
 	module.getCustomerInfo = function () {
 		$.ajax({
-			url: 'http://localhost:3000/users/retrieve_card',
+			url: 'http://bobs-bagels-api.herokuapp.com//users/retrieve_card',
 			type: 'POST',
 			data: {
 				user: {
@@ -124,8 +124,8 @@ var profile = (function (module){
 			console.log(jqXHR, textStatus, errorThrown);
 		});
 	};
-	
-	
+
+
 return module;
 
 })(profile || {});

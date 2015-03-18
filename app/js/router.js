@@ -2,7 +2,7 @@
 
 var router = (function (module) {
 
-  module.host = "http://localhost:3000";
+  module.host = "http://bobs-bagels-api.herokuapp.com";
 
   var Router = Backbone.Router.extend({
     routes: {
@@ -55,10 +55,10 @@ var router = (function (module) {
       cart.init();
     },
 	  userPayments: function(){
-		  $('#content').empty().load('partials/user-payment.html');	  
+		  $('#content').empty().load('partials/user-payment.html');
 		  order.init();
 	  },
-	  
+
     myProfile: function(){
       $('#content').empty().load('partials/my-profile.html');
 //       $.ajax({
